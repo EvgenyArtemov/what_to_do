@@ -1,0 +1,96 @@
+.todos {
+  &__header {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 0.5rem;
+    margin: 2rem 1rem;
+    border-radius: 1.5rem;
+    -webkit-box-shadow: 0px 16px 35px 0px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow: 0px 16px 35px 0px rgba(50, 50, 50, 0.1);
+    box-shadow: 0px 16px 35px 0px rgba(50, 50, 50, 0.1);
+  }
+
+  &__inputs {
+    display: flex;
+    justify-content: space-around;
+
+    form {
+      display: flex;
+      align-items: center;
+      margin-right: 2rem;
+    }
+
+    form > .input {
+      &__text {
+        font-size: 1.9rem;
+        border: none;
+        padding: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        border-radius: 1rem;
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 3px #449dc9;
+        }
+      }
+
+      &__date {
+        font-size: 1.8rem;
+        border: none;
+        padding: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        border-radius: 1rem;
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 3px #449dc9;
+        }
+      }
+
+      &__time {
+        font-size: 1.8rem;
+        border: none;
+        padding: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        border-radius: 1rem;
+        &:focus {
+          outline: none;
+          box-shadow: 0px 0px 3px #449dc9;
+        }
+
+        &:active {
+          outline: none;
+          box-shadow: 0px 0px 3px #449dc9;
+        }
+      }
+
+      &__button {
+        font-size: 16px;
+        margin-left: 1rem;
+        background-color: white;
+        border-radius: 1.3rem;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        &:focus {
+          outline: none;
+          box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        &:active {
+          transform: translateY(1px);
+          box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+
+    & > form > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.todos__inputs {
+}
