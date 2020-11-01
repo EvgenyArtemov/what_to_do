@@ -1,15 +1,12 @@
 export interface TodoEntry {
     text: string;
     id: number;
+    time: string;
     isDone: boolean;
 }
 
-interface Dates {
-    [key: string]: TodoEntry[] | any;
-}
-
 export interface TodoState {
-    dates: Dates;
+    [key: string]: TodoEntry[];
 }
 
 export const ADD_TODO  = 'ADD_TODO';
@@ -19,14 +16,10 @@ export const TOGGLE_TODO = 'TOGGLE_TODO';
 interface AddTodo {
     type: typeof ADD_TODO;
     date: string;
+    time: string;
     payload: TodoEntry;
 }
 
-interface RemoveTodo {
-    type: typeof REMOVE_TODO;
-    date: string;
-    id: number;
-}
 
 interface ToggleTodo {
     type: typeof TOGGLE_TODO;
@@ -34,4 +27,4 @@ interface ToggleTodo {
     id: number;
 }
 
-export type TodoActions = AddTodo | RemoveTodo | ToggleTodo;
+export type TodoActions = AddTodo | ToggleTodo;

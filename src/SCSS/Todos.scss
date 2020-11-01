@@ -1,0 +1,50 @@
+.todo__container {
+  display: flex;
+  flex-direction: column;
+
+  .todo {
+    &__card {
+      background-color: white;
+      padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+      margin: 1rem;
+      border-radius: 2rem;
+
+      &__header {
+        font-size: 1.8rem;
+        margin: 0.3rem;
+      }
+    }
+
+    &__list {
+      margin-top: 2rem;
+      padding: 0;
+      list-style: none;
+
+      .list__item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0.5rem 0;
+
+        &__text {
+          font-size: 1.4rem;
+          &.crossed {
+            text-decoration: line-through;
+          }
+        }
+
+        &__time {
+          font-size: 0.8rem;
+          color: gray;
+          margin-top: 0.3rem;
+          padding-left: 1rem;
+          margin-left: auto;
+        }
+
+        & > input {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }
+}

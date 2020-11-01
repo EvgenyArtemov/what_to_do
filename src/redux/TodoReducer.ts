@@ -1,73 +1,53 @@
+//@ts-nocheck
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO, TodoState, TodoActions,TodoEntry } from './TodoTypes';
 
 const initialState: TodoState = {
-    dates: {
-            '12.10.2020': [
+            '12-10-2020': [
                 {
-                    text: 'Сделать одно',
+                    text: 'Запишите ваши задачи',
                     id: 1,
+                    time: '11:03',
                     isDone: false
                 },
                 {
-                    text: 'Сделать другое',
+                    text: 'И они отобразятся здесь',
                     id: 2,
+                    time: '16:05',
                     isDone: false
                 },
                 {
-                    text: 'Сделать третье',
+                    text: 'Потом выполните их',
                     id: 3,
+                    time: '12:07',
                     isDone: false
                 }
-            ],
-            '13.10.2020': [
-                {
-                    text: 'Сделать одно',
-                    id: 1,
-                    isDone: false
-                },
-                {
-                    text: 'Сделать другое',
-                    id: 2,
-                    isDone: false
-                },
-                {
-                    text: 'Сделать третье',
-                    id: 3,
-                    isDone: false
-                }
-            ] 
-        }
+            ]
 }
 
 
 export const TodoReducer = (state = initialState, action: TodoActions): TodoState => {
     switch (action.type) {
         case ADD_TODO:
-            return {
-                ...state,
-                dates: {
-                    [action.date]: [action.payload, ...state.dates[action.date]]
+            if(state[action.date]){
+                return {
+                    ...state,
+                    [action.date]: [...state[action.date], action.payload]
                 }
             }
-        case REMOVE_TODO:
             return {
                 ...state,
-                dates: {
-                    [action.date]: state.dates[action.date].filter((item: TodoEntry) => { return item.id !== action.id})
-                }
+                [action.date]: [action.payload]
             }
         case TOGGLE_TODO:
             return {
                 ...state,
-                dates: {
-                    [action.date]:  state.dates[action.date].map((item: TodoEntry) => {
-                        if(item.id === action.id){
-                            item.isDone = !item.isDone
-                            return item
-                        }
-                        return item
-                    })
-                }
+                [action.date]: state[action.date].map(el => {
+                    if(el.id === action.id){
+                        el.isDone = !el.isDone
+                        return el;
+                    }
+                    return el;
+                }).sort((a,b) => {return a.isDone-b.isDone})
             }
         default:
             return state;
