@@ -9,7 +9,7 @@ export const TodosHeader = () => {
 
     let today = new Date();
     const date = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate().toString().padStart(2, '0')}`;
-    const time = `${today.getHours().toString().padStart(2, '0')}:${today.getMinutes()}`;
+    const time = `${today.getHours().toString().padStart(2, '0')}:${today.getMinutes().toString().padStart(2, '0')}`;
     const initialState = {
         text: '',
         date: date,

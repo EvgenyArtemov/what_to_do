@@ -9,23 +9,27 @@ import './SCSS/Todos.scss';
      const dispatch = useDispatch();
      const todos = useSelector((state: State) => state, shallowEqual);
 
-     const [check, setCheck] = useState(false);
-
      const changeHandler = (ev: any) => {
         dispatch(ToggleTodo(ev.target.dataset.key, +ev.target.dataset.id))
      }
-     
-     useEffect(() => {
-         console.log(todos);
-     }, [todos])
+
+     let formatter = new Intl.DateTimeFormat("ru", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+
     return (
         <>
             <TodosHeader/>
             <section className="todo__container">
                 {todos && Object.keys(todos).map(key => {
+                    const keyDate = key.split('-').reverse();
+                    const date = new Date(parseInt(keyDate[0]), parseInt(keyDate[1]), parseInt(keyDate[2]));
+                    const fullDate = formatter.format(date)
                     return (
                         <div className="todo__card">
-                            <h3 className="todo__card__header">📆 {key}</h3>
+                            <h3 className="todo__card__header">📆 {fullDate}</h3>
                             <ul className="todo__list">
                                 {todos[key].map((el) => {
                                     return (
