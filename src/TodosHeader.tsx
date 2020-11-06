@@ -24,7 +24,7 @@ export const TodosHeader = () => {
 
     const todoHandler = () => {
         if(formState.text){
-            dispatch(AddTodo(formState.date, 
+            dispatch(AddTodo(formState.date.split('-').reverse().join('-'), 
                 {
                     text: formState.text, 
                     time: formState.time, 

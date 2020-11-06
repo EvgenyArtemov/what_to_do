@@ -25,7 +25,8 @@ import './SCSS/Todos.scss';
             <section className="todo__container">
                 {todos && Object.keys(todos).map(key => {
                     const keyDate = key.split('-').reverse();
-                    const date = new Date(parseInt(keyDate[0]), parseInt(keyDate[1]), parseInt(keyDate[2]));
+                    console.log(keyDate)
+                    const date = new Date(parseInt(keyDate[0]), parseInt(keyDate[1]) - 1, parseInt(keyDate[2]));
                     const fullDate = formatter.format(date)
                     return (
                         <div className="todo__card">
