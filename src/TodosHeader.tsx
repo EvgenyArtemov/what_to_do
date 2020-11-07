@@ -36,8 +36,20 @@ export const TodosHeader = () => {
         }
     }
 
+    const handleEnter = (ev: KeyboardEvent) => {
+        if(ev.key === 'Enter'){
+            ev.preventDefault();
+            todoHandler();
+        }
+    }
+
     useEffect(() => {
         today = new Date();
+        document.addEventListener('keydown', handleEnter as EventListener, false);
+
+        return () => {
+            document.removeEventListener('keydown', handleEnter as EventListener, false);
+        }
     })
 
     return (

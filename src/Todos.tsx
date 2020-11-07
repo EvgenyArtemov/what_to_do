@@ -23,13 +23,13 @@ import './SCSS/Todos.scss';
         <>
             <TodosHeader/>
             <section className="todo__container">
-                {todos && Object.keys(todos).map(key => {
+                {todos && Object.keys(todos).map((key, i) => {
                     const keyDate = key.split('-').reverse();
                     console.log(keyDate)
                     const date = new Date(parseInt(keyDate[0]), parseInt(keyDate[1]) - 1, parseInt(keyDate[2]));
                     const fullDate = formatter.format(date)
                     return (
-                        <div className="todo__card">
+                        <div className="todo__card" id={i.toString()}>
                             <h3 className="todo__card__header">📆 {fullDate}</h3>
                             <ul className="todo__list">
                                 {todos[key].map((el) => {

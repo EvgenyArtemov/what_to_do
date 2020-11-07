@@ -8,6 +8,86 @@ const initialState: TodoState = {
                     id: 1,
                     time: '11:03',
                     isDone: false
+                }
+            ],
+            '13-10-2020': [
+                {
+                    text: 'Запишите ваши задачи',
+                    id: 1,
+                    time: '11:03',
+                    isDone: false
+                },
+                {
+                    text: 'И они отобразятся здесь',
+                    id: 2,
+                    time: '16:05',
+                    isDone: false
+                },
+                {
+                    text: 'Потом выполните их',
+                    id: 3,
+                    time: '12:07',
+                    isDone: false
+                }
+            ],
+            '14-10-2020': [
+                {
+                    text: 'Запишите ваши задачи',
+                    id: 1,
+                    time: '11:03',
+                    isDone: false
+                },
+                {
+                    text: 'И они отобразятся здесь',
+                    id: 2,
+                    time: '16:05',
+                    isDone: false
+                },
+                {
+                    text: 'Потом выполните их',
+                    id: 3,
+                    time: '12:07',
+                    isDone: false
+                },
+                {
+                    text: 'Строки не зависят от высоты контейнера',
+                    id: 4,
+                    time: '12:07',
+                    isDone: false
+                },
+                {
+                    text: 'Убедитесь сами!',
+                    id: 5,
+                    time: '12:07',
+                    isDone: false
+                }
+            ],
+            '15-10-2020': [
+                {
+                    text: 'Запишите ваши задачи',
+                    id: 1,
+                    time: '11:03',
+                    isDone: false
+                },
+                {
+                    text: 'И они отобразятся здесь',
+                    id: 2,
+                    time: '16:05',
+                    isDone: false
+                },
+                {
+                    text: 'Потом выполните их',
+                    id: 3,
+                    time: '12:07',
+                    isDone: false
+                }
+            ],
+            '16-10-2020': [
+                {
+                    text: 'Запишите ваши задачи',
+                    id: 1,
+                    time: '11:03',
+                    isDone: false
                 },
                 {
                     text: 'И они отобразятся здесь',
